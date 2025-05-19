@@ -73,6 +73,13 @@ p {
     z-index: 1000;
 }
 
+.homepage .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    background-color: rgba(18, 18, 18, 0.98);
+}
+
 .navbar h1 {
     font-size: 2rem;
     font-weight: bold;

@@ -47,8 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname.split('/').pop();
     const navLinks = document.querySelectorAll('.navbar a');
 
+    console.log('Current Path:', currentPath); // Debugging line
+
     navLinks.forEach(link => {
         const linkPath = link.href.split('/').pop();
+        console.log('Checking Link:', link.textContent, 'Path:', linkPath); // Debugging line
         if (currentPath === linkPath || (currentPath === '' && linkPath === 'index.html')) {
             link.classList.add('active');
         }
