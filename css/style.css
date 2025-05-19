@@ -428,7 +428,7 @@ footer a:hover {
     text-decoration: none;
     border-radius: 5px;
     font-weight: 600;
-    transition: var(--transition-default), transform 0.2s ease;
+    transition: var(--transition-default), transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border: 1px solid transparent;
     position: relative;
@@ -463,20 +463,24 @@ footer a:hover {
     left: 100%;
 }
 
+.btn:active {
+    transform: scale(0.95);
+}
+
 /* Scroll Progress Indicator */
 .scroll-progress {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 4px;
     background: rgba(155, 109, 255, 0.1);
     z-index: 1001;
 }
 
 .scroll-progress-bar {
     height: 100%;
-    background: var(--accent-gradient);
+    background: linear-gradient(90deg, var(--accent-color), #7a3a7a);
     width: 0%;
     transition: width 0.2s ease;
 }
@@ -498,87 +502,66 @@ footer a:hover {
     font-size: 2rem;
     color: var(--text-secondary);
     transition: all 0.3s ease, transform 0.2s ease;
+    position: relative;
+    padding: 10px;
+    border-radius: 50%;
 }
 
 .social-icon:hover {
     color: var(--accent-color);
     transform: translateY(-5px) scale(1.1);
-}
-
-/* Accordion Styles */
-.accordion-item {
-  margin-bottom: 1rem;
-  border: 1px solid rgba(155, 109, 255, 0.2);
-  border-radius: 8px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.02);
-}
-.accordion-toggle {
-  width: 100%;
-  text-align: left;
-  padding: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background: var(--gradient-secondary);
-  color: var(--text-primary);
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  padding: 0 1rem;
-  background: rgba(255, 255, 255, 0.01);
-}
-.accordion-content ul {
-  list-style-type: none;
-  padding: 1rem 0;
-  line-height: 1.6;
-}
-.accordion-content.active {
-  padding: 1rem;
-  max-height: 500px; /* Adjusted for content height */
+    background: rgba(155,109,255,0.1);
+    box-shadow: 0 0 15px rgba(155,109,255,0.2);
 }
 
 /* Tech Stack Styles */
 .tech-stack {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted minmax */
-  gap: 1rem;
-  margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
 }
+
 .tech-group {
-  background: rgba(155, 109, 255, 0.05);
-  padding: 0.75rem;
-  border-radius: 5px;
-  border: 1px solid rgba(155, 109, 255, 0.1);
-  text-align: center; /* Center text within tech group */
+    background: rgba(155, 109, 255, 0.05);
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid rgba(155, 109, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
 }
+
+.tech-group:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(45deg, rgba(155,109,255,0.1), transparent);
+    border-color: var(--accent-color);
+}
+
 .tech-group strong {
-  display: block;
-  color: var(--accent-color);
-  font-size: 0.9rem;
-  margin-bottom: 0.25rem;
-  text-align: center;
+    display: block;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    text-align: center;
 }
+
 .tech-group span {
-  display: block;
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
 }
+
 .tech-group i {
-  margin-right: 6px;
-  color: var(--accent-color);
+    margin-right: 6px;
+    color: var(--accent-color);
 }
 
 /* Responsive adjustments for tech stack */
 @media (max-width: 768px) {
-  .tech-stack {
-    grid-template-columns: 1fr;
-  }
+    .tech-stack {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Project Details */
@@ -619,6 +602,16 @@ footer a:hover {
     color: var(--text-secondary);
     font-size: 1rem;
     line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 0.8s 0.4s forwards;
+}
+
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Quick Links Styles (for homepage) */
@@ -667,4 +660,189 @@ footer a:hover {
 /* Hide mobile menu button by default on larger screens */
 .mobile-menu-btn {
     display: none;
+}
+
+/* Resume Item Styles */
+.resume-item {
+    background: rgba(155, 109, 255, 0.05);
+    border: 1px solid rgba(155, 109, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.resume-item::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.resume-item:hover {
+    background: rgba(155, 109, 255, 0.1);
+    border-color: var(--accent-color);
+}
+
+.resume-item strong {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.resume-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resume-item ul li {
+    margin-bottom: 0.5rem; /* Space between list items */
+    line-height: 1.6;
+    color: var(--text-secondary); /* Use secondary color for list items */
+    position: relative;
+    padding-left: 1em; /* Space for nested list bullet */
+}
+
+.resume-item ul li a {
+    color: var(--accent-color); /* Make links stand out */
+    text-decoration: underline; /* Add underline for clarity */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resume-item ul li a:hover {
+    color: var(--accent-hover); /* Slightly different color on hover */
+}
+
+.resume-item ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Print Optimization */
+@media print {
+    .neural-background,
+    .scroll-progress,
+    .mobile-menu-btn {
+        display: none !important;
+    }
+    
+    .navbar,
+    .quick-nav,
+    footer .contact-links {
+        display: none !important;
+    }
+
+    body {
+        background-color: #fff !important;
+        color: #000 !important;
+        animation: none !important;
+        opacity: 1 !important;
+    }
+
+    h1, h2, h3, p, strong {
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+        background: none !important;
+    }
+
+    .section {
+        background: none !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+        margin: 1rem 0 !important;
+        padding: 1rem !important;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .section::after {
+        display: none !important;
+    }
+
+    .resume-item,
+    .project-card,
+    .tech-group {
+        background: #fff !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        margin-bottom: 1rem !important;
+        padding: 1rem !important;
+    }
+
+    .resume-item strong {
+        color: #000 !important;
+    }
+    
+    .resume-item ul {
+        list-style: disc !important;
+        padding-left: 1.5rem !important;
+    }
+
+    .resume-item ul li {
+        color: #000 !important;
+        margin-bottom: 0.25rem !important;
+        padding-left: 0 !important;
+    }
+    
+    .resume-item ul li::before {
+        display: none !important;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .project-card-image {
+        max-width: 100% !important;
+        height: auto !important;
+        filter: none !important;
+    }
+
+    .project-card-actions {
+        display: none !important;
+    }
+
+    .skill-badge {
+        border: 1px solid #ccc !important;
+        background: #fff !important;
+        color: #000 !important;
+        padding: 0.1rem 0.5rem !important;
+        margin-right: 0.5rem !important;
+        display: inline-block !important;
+    }
+
+    .tech-stack {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+    }
+
+    .tech-group strong,
+    .tech-group span {
+        color: #000 !important;
+    }
+
+    a {
+        color: #000 !important;
+        text-decoration: underline !important;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+}
+
+/* Focus States Accessibility */
+a:focus,
+button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
 } 

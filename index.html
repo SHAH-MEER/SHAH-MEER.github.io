@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Science Portfolio</title>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/common.js" as="script">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -116,8 +119,7 @@
     <nav class="navbar">
         <h1>Data Science Portfolio</h1>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="resume.html">Resume Explorer</a></li>
+            <li><a href="index.html">Home & Resume</a></li>
             <li><a href="projects.html">Projects</a></li>
         </ul>
     </nav>
@@ -136,13 +138,78 @@
         </div>
     </header>
 
-    <!-- Quick Links Section -->
-    <section class="section">
-        <h2>Explore My Work</h2>
-        <div class="quick-links">
-            <a href="resume.html" class="btn">View Resume Explorer</a>
-            <a href="projects.html" class="btn">Browse Projects</a>
-        </div>
+    <!-- Resume Explorer Section -->
+    <section id="resume-explorer" class="section">
+        <h2>📄 Resume Explorer</h2>
+        <p class="section-description">Interactive overview of my experience, education, and skills. Explore the sections below.</p>
+
+        <!-- Experience Section -->
+        <section id="experience-section" class="section">
+            <h3>💼 Experience</h3>
+            <ul>
+                <li>
+                    <div class="resume-item">
+                        <strong>Data Scientist, Freelance (2024–Present)</strong><br>
+                        Built projects like <a href="projects.html#machine-learning">AutoML Web App</a> and <a href="projects.html#deep-learning">CIFAR-10 Classifier</a>.<br>
+                        Tools: Python, Streamlit, Gradio, Scikit-learn, PyTorch, TensorFlow
+                    </div>
+                </li>
+                <li>
+                    <div class="resume-item">
+                        <strong>Public Health Research Assistant</strong><br>
+                        Worked on data collection and analysis for WHO campaigns and autism research.<br>
+                        Tools: SPSS, Excel, R
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education-section" class="section">
+            <h3>🎓 Education</h3>
+            <ul>
+                <li>
+                    <div class="resume-item">
+                        <strong>BS in Public Health</strong> – Health Services Academy<br>
+                        Relevant coursework: Biostatistics, Epidemiology
+                    </div>
+                </li>
+                <li>
+                    <div class="resume-item">
+                        <strong>Machine Learning Specializations</strong><br>
+                        DeepLearning.AI, WorldQuant University<br>
+                        Courses: NLP, GANs, Applied Data Science
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills-section" class="section">
+            <h3>🛠️ Skills</h3>
+            <div class="tech-stack">
+                <div class="tech-group">
+                    <strong><i class="fas fa-code"></i> Languages</strong>
+                    <span>Python, R, SQL</span>
+                </div>
+                <div class="tech-group">
+                    <strong><i class="fas fa-cubes"></i> Libraries</strong>
+                    <span>NumPy, Pandas, Matplotlib, Scikit-learn, TensorFlow, PyTorch</span>
+                </div>
+                <div class="tech-group">
+                    <strong><i class="fas fa-laptop-code"></i> IDEs</strong>
+                    <span>VS Code, PyCharm, Jupyter Notebook, Google Colab</span>
+                </div>
+                <div class="tech-group">
+                    <strong><i class="fas fa-tools"></i> Tools</strong>
+                    <span>Streamlit, Gradio, Git, GitHub, Tableau, Excel, SPSS</span>
+                </div>
+                <div class="tech-group">
+                    <strong><i class="fas fa-brain"></i> Domains</strong>
+                    <span>Public Health, Health Economics, Data Analysis</span>
+                </div>
+            </div>
+        </section>
     </section>
 
     <!-- Contact Section -->
@@ -161,6 +228,11 @@
             </a>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Shahmeer Shahzad. All rights reserved. | <a href="#top">Back to Top</a></p>
+    </footer>
 
     <script src="js/common.js" defer></script>
 </body>
