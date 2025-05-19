@@ -142,49 +142,62 @@
         <p class="section-description">Interactive overview of my experience, education, and skills. Explore the sections below.</p>
 
         <!-- Experience Section -->
-        <section id="experience-section" class="section">
-            <h3>💼 Experience</h3>
+        <div class="accordion-item">
+            <h3 class="accordion-header">💼 Experience</h3>
+            <div class="accordion-content">
               <ul>
                 <li>
                     <div class="resume-item">
-                  <strong>Data Scientist, Freelance (2024–Present)</strong><br>
-                        Built projects like <a href="projects.html#machine-learning">AutoML Web App</a> and <a href="projects.html#deep-learning">CIFAR-10 Classifier</a>.<br>
-                        Tools: Python, Streamlit, Gradio, Scikit-learn, PyTorch, TensorFlow
+                  <strong><i class="fas fa-briefcase resume-icon"></i> Data Scientist, Freelance</strong> <span class="resume-date">(2024–Present)</span><br>
+                        <ul>
+                            <li>Built projects like <a href="projects.html#machine-learning">AutoML Web App</a> and <a href="projects.html#deep-learning">CIFAR-10 Classifier</a>.</li>
+                            <li>Tools: Python, Streamlit, Gradio, Scikit-learn, PyTorch, TensorFlow</li>
+                        </ul>
                     </div>
                 </li>
                 <li>
                     <div class="resume-item">
-                  <strong>Public Health Research Assistant</strong><br>
-                  Worked on data collection and analysis for WHO campaigns and autism research.<br>
-                  Tools: SPSS, Excel, R
+                  <strong><i class="fas fa-briefcase resume-icon"></i> Public Health Research Assistant</strong> <span class="resume-date"></span><br>
+                  <ul>
+                      <li>Worked on data collection and analysis for WHO campaigns and autism research.</li>
+                      <li>Tools: SPSS, Excel, R</li>
+                  </ul>
                     </div>
                 </li>
               </ul>
-        </section>
+            </div>
+        </div>
         
         <!-- Education Section -->
-        <section id="education-section" class="section">
-            <h3>🎓 Education</h3>
+        <div class="accordion-item">
+            <h3 class="accordion-header">🎓 Education</h3>
+            <div class="accordion-content">
               <ul>
                 <li>
                     <div class="resume-item">
-                  <strong>BS in Public Health</strong> – Health Services Academy<br>
-                  Relevant coursework: Biostatistics, Epidemiology
+                  <strong><i class="fas fa-graduation-cap resume-icon"></i> BS in Public Health</strong> – Health Services Academy <span class="resume-date"></span><br>
+                  <ul>
+                      <li>Relevant coursework: Biostatistics, Epidemiology</li>
+                  </ul>
                     </div>
                 </li>
                 <li>
                     <div class="resume-item">
-                  <strong>Machine Learning Specializations</strong><br>
-                  DeepLearning.AI, WorldQuant University<br>
-                  Courses: NLP, GANs, Applied Data Science
+                  <strong><i class="fas fa-graduation-cap resume-icon"></i> Machine Learning Specializations</strong><br>
+                  DeepLearning.AI, WorldQuant University <span class="resume-date"></span><br>
+                  <ul>
+                      <li>Courses: NLP, GANs, Applied Data Science</li>
+                  </ul>
                     </div>
                 </li>
               </ul>
-        </section>
+            </div>
+        </div>
 
         <!-- Skills Section -->
-        <section id="skills-section" class="section">
-            <h3>🛠️ Skills</h3>
+        <div class="accordion-item">
+            <h3 class="accordion-header">🛠️ Skills</h3>
+            <div class="accordion-content">
               <div class="tech-stack">
                 <div class="tech-group">
                   <strong><i class="fas fa-code"></i> Languages</strong>
@@ -203,7 +216,8 @@
                   <span>Public Health, Health Economics, Data Analysis</span>
           </div>
         </div>
-        </section>
+            </div>
+        </div>
       </section>
       
     <!-- Featured Projects Section -->
@@ -355,7 +369,7 @@
         <p>&copy; 2023 Shahmeer Shahzad. All rights reserved. | <a href="#top">Back to Top</a></p>
     </footer>
 
-    <script src="js/common.js" defer></script>
+    <script src="js/common.js?v=1" defer></script>
     <script>
         // Project category filter functionality
         document.addEventListener('DOMContentLoaded', function() {

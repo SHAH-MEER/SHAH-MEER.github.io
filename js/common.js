@@ -1,3 +1,4 @@
+console.log('common.js loaded successfully!'); // Added log
 // Intersection Observer for section animations
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
@@ -137,3 +138,52 @@ function createNeuralNetwork(svg) {
 }
 // Call the function on initial load
 // createNeuralNetwork(document.querySelector('.neural-background svg')); // This line is already in index.html 
+
+// Accordion functionality for Resume Explorer
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Accordion script running.'); // Added log
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    console.log('Found accordion headers:', accordionHeaders.length); // Added log
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            console.log('Accordion header clicked:', this); // Added log
+            const accordionItem = this.parentElement;
+            const accordionContent = this.nextElementSibling;
+
+            // Toggle the 'active' class on the clicked item
+            accordionItem.classList.toggle('active');
+
+            // Toggle the display of the content
+            if (accordionItem.classList.contains('active')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            } else {
+                accordionContent.style.maxHeight = '0';
+            }
+        });
+    });
+});
+
+// Project category filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const categorySelect = document.getElementById('projectCategory');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    function filterProjects() {
+        const selectedCategory = categorySelect.value;
+        projectCards.forEach(card => {
+            if (card.dataset.category === selectedCategory) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    if (categorySelect && projectCards.length > 0) { // Added check for elements
+        categorySelect.addEventListener('change', filterProjects);
+        // Initial filter
+        filterProjects();
+    }
+}); 
