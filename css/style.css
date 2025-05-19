@@ -393,8 +393,8 @@ footer a:hover {
 
 .project-card-image {
     width: 100%;
-    height: 300px; /* Increased from 250px */
-    object-fit: cover; /* Ensures images fill the space while maintaining aspect ratio */
+    height: auto; /* Changed from fixed height */
+    object-fit: contain; /* Changed from cover */
     filter: grayscale(20%) brightness(90%);
     border-radius: 10px 10px 0 0;
     transition: filter 0.3s ease;
