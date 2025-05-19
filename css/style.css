@@ -80,8 +80,6 @@ p {
     background-color: rgba(18, 18, 18, 0.98);
 }
 
-
-
 .navbar ul {
     list-style: none;
     display: flex;
@@ -331,6 +329,16 @@ footer a:hover {
     margin: 0 auto; /* Center the grid */
 }
 
+/* Make featured project grid on homepage single column */
+#featured-projects .projects-grid {
+    grid-template-columns: 1fr;
+}
+
+/* Hide all project cards in the featured section by default */
+#featured-projects .projects-grid .project-card {
+    display: none;
+}
+
 /* Optional: Adjust card width if needed */
 .project-card {
     width: 100%; /* Ensures cards fill their grid cells */
@@ -385,7 +393,7 @@ footer a:hover {
 
 .project-card-image {
     width: 100%;
-    height: 300px; /* Increased from 250px */
+    height: 600px; /* Increased height */
     object-fit: cover; /* Ensures images fill the space while maintaining aspect ratio */
     filter: grayscale(20%) brightness(90%);
     border-radius: 10px 10px 0 0;
@@ -395,7 +403,7 @@ footer a:hover {
 /* Optional: Adjust for mobile if needed */
 @media (max-width: 768px) {
     .project-card-image {
-        height: 250px; /* Slightly smaller on mobile */
+        height: 300px; /* Slightly smaller on mobile, also increased */
     }
 }
 
@@ -848,4 +856,55 @@ a:focus,
 button:focus {
     outline: 2px solid var(--accent-color);
     outline-offset: 3px;
+}
+
+/* Project Filter Styles */
+.project-filter {
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 300px;
+    position: relative; /* Needed for custom arrow */
+}
+
+.category-select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    background-color: var(--bg-primary); /* Use primary background for contrast */
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none; /* Remove default dropdown arrow */
+    /* Custom arrow (optional, but improves styling consistency) */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); /* White arrow */
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem; /* Make space for the custom arrow */
+}
+
+.category-select:hover {
+    border-color: var(--accent-color-hover);
+    box-shadow: 0 0 0 2px rgba(155, 109, 255, 0.2); /* Use accent color for shadow */
+}
+
+.category-select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(155, 109, 255, 0.3);
+}
+
+/* Project Card Transition */
+.project-card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Specific rule to show the selected project card, overridden by JS */
+#featured-projects .projects-grid .project-card[style*="display: block"] {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 } 
