@@ -80,11 +80,7 @@ p {
     background-color: rgba(18, 18, 18, 0.98);
 }
 
-.navbar h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--text-primary);
-}
+
 
 .navbar ul {
     list-style: none;
