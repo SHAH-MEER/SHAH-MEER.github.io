@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shahmeer Shahzad — Data Science Portfolio</title>
+<meta name="description" content="Data science & analytics portfolio — machine learning, deep learning, SQL, EDA, and data visualization projects.">
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("theme");
+    if (t !== "light" && t !== "dark") {
+      t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    }
+    document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<button id="skip-link" class="skip-link" tabindex="0" onclick="document.getElementById('main').focus()">Skip to content</button>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a href="#top" class="nav-brand">SS<span class="nav-brand-dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark and light mode" aria-pressed="false">
+      <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span class="toggle-track"><span class="toggle-thumb"></span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <section id="top" class="hero container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">&gt; data science &amp; analytics</p>
+        <h1>Hi, I'm Shahmeer<span class="accent-dot">.</span></h1>
+        <p class="lede">I'm a data science student building end-to-end projects across machine learning, deep learning, SQL, and data visualization — currently looking for data science &amp; data analyst roles.</p>
+        <div class="hero-actions">
+          <a href="assets/resume.pdf" class="btn btn-primary" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+            Download Résumé
+          </a>
+          <a href="#projects" class="btn btn-ghost">View Projects</a>
+        </div>
+        <ul class="social-links" aria-label="Social links">
+          <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:shahmeershahzad67@gmail.com">Email</a></li>
+          <li><a href="https://kaggle.com/" target="_blank" rel="noopener">Kaggle</a></li>
+        </ul>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 400 400" class="node-graphic">
+          <g class="grid-dots"></g>
+          <g class="graph-lines">
+            <line x1="80" y1="120" x2="200" y2="80"/>
+            <line x1="80" y1="120" x2="140" y2="230"/>
+            <line x1="200" y1="80" x2="320" y2="140"/>
+            <line x1="200" y1="80" x2="230" y2="220"/>
+            <line x1="140" y1="230" x2="230" y2="220"/>
+            <line x1="140" y1="230" x2="110" y2="330"/>
+            <line x1="230" y1="220" x2="320" y2="140"/>
+            <line x1="230" y1="220" x2="300" y2="310"/>
+            <line x1="320" y1="140" x2="300" y2="310"/>
+          </g>
+          <g class="graph-nodes">
+            <circle cx="80" cy="120" r="7"/>
+            <circle cx="200" cy="80" r="10"/>
+            <circle cx="320" cy="140" r="8"/>
+            <circle cx="140" cy="230" r="6"/>
+            <circle cx="230" cy="220" r="11"/>
+            <circle cx="110" cy="330" r="7"/>
+            <circle cx="300" cy="310" r="9"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about container">
+    <h2 class="section-title"><span class="section-index">01</span> About</h2>
+
+    <div class="about-grid">
+      <div class="skills-block">
+        <h3 class="block-heading">Skills &amp; Stack</h3>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+
+      <div class="bio-block">
+        <h3 class="block-heading">Background</h3>
+        <p>I'm a data science student focused on turning messy, real-world data into models and dashboards people can actually use. My work spans classical machine learning, deep learning with PyTorch, SQL-driven analysis, and dashboarding in Tableau/Power BI.</p>
+        <p>I'm currently applying for data science and data analyst roles — I like the analyst side of the work (asking the right question, finding the story in the data) as much as the modeling side.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects container">
+    <h2 class="section-title"><span class="section-index">02</span> Project Showcase</h2>
+
+    <div class="project-controls">
+      <div class="tabs" id="category-tabs" role="tablist" aria-label="Project categories">
+        <button class="tab active" data-category="dataviz" role="tab" aria-selected="true">Data Visualization</button>
+        <button class="tab" data-category="sql" role="tab" aria-selected="false">SQL</button>
+        <button class="tab" data-category="eda" role="tab" aria-selected="false">EDA &amp; Statistics</button>
+        <button class="tab" data-category="ml" role="tab" aria-selected="false">Machine Learning</button>
+        <button class="tab" data-category="dl" role="tab" aria-selected="false">Deep Learning</button>
+      </div>
+
+      <div class="tag-filter-bar">
+        <span class="tag-filter-label">Filter by tag:</span>
+        <div class="tag-pills" id="tag-pills"></div>
+      </div>
+    </div>
+
+    <p class="filter-status" id="filter-status" hidden></p>
+
+    <div class="project-grid" id="project-grid"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Shahmeer Shahzad. Built with plain HTML, CSS &amp; JS — hosted on GitHub Pages.</p>
+  </div>
+</footer>
+
+<script src="js/theme.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>
