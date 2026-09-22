@@ -18,11 +18,21 @@
   };
 
   // Curated whitelist for the "Filter by tag" pills — deliberately just
-  // languages/tools, not techniques. Project cards still show their full
-  // tag list; this only controls what's promoted to a clickable filter,
-  // so it stays short as more projects (and more one-off tags) get added.
-  // Add a tag here only if it's worth filtering the whole category by.
-  var FILTERABLE_TAGS = new Set(["Python", "R", "PostgreSQL", "Tableau", "Power BI", "PyTorch"]);
+  // languages/tools/subfields, not one-off techniques. Project cards still
+  // show their full tag list; this only controls what's promoted to a
+  // clickable filter. Add a tag here only if it's worth filtering by.
+  var FILTERABLE_TAGS = new Set([
+    "Python", "R", "PostgreSQL", "Tableau", "Power BI", "PyTorch", "CV", "NLP", "Transformers"
+  ]);
+
+  // Tags reserved per category so a planned filter can appear before any
+  // project uses it yet (e.g. NLP work you haven't published). Anything a
+  // project actually tags (and that's in FILTERABLE_TAGS) shows up too —
+  // this list just guarantees these appear even with zero matches today.
+  var CATEGORY_RESERVED_TAGS = {
+    dataviz: ["Tableau", "Power BI"],
+    dl: ["PyTorch", "CV", "NLP", "Transformers"]
+  };
 
   var skills = [
     { name: "Python", icon: "devicon-python-plain colored" },
@@ -192,6 +202,7 @@
   // added rather than accumulating every tag across every category.
   function tagsForActiveCategory() {
     var set = {};
+    (CATEGORY_RESERVED_TAGS[state.category] || []).forEach(function (t) { set[t] = true; });
     projects
       .filter(function (p) { return p.category === state.category; })
       .forEach(function (p) {
