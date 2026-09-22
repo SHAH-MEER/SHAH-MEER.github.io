@@ -78,6 +78,18 @@
       ]
     },
     {
+      id: "powerbi-nightmare-star-schema",
+      title: "Nightmare to Star Schema: Power BI Data Model",
+      category: "datamodel",
+      description: "Refactored a messy, real-world 23-table enterprise dataset (sales, inventory, shipments, marketing) into a clean Power BI star/galaxy schema. Built header-detail, factless-fact, accumulating-snapshot, and role-playing-dimension patterns, a central DAX measures table, and dynamic row-level security by region — while protecting total sales figures from merge-driven row fan-out.",
+      tags: ["Power BI", "DAX", "Star Schema"],
+      image: "images/powerbi-nightmare-star.png",
+      links: [
+        { label: "View Report", url: "#", primary: true },
+        { label: "Source Code", url: "https://github.com/SHAH-MEER/Power-bi-nightmare-star" }
+      ]
+    },
+    {
       id: "cookie-cats-ab-test",
       title: "Cookie Cats A/B Test Case Study",
       category: "eda",
