@@ -111,15 +111,15 @@
       ]
     },
     {
-      id: "churn-eda-r",
-      title: "Customer Churn EDA in R",
+      id: "cookie-cats-ab-test",
+      title: "Cookie Cats A/B Test Case Study",
       category: "eda",
-      description: "R-based exploratory analysis of telecom customer churn, with hypothesis testing on key churn drivers.",
-      tags: ["R", "Statistics"],
+      description: "R and Quarto case study on a mobile game A/B test (Cookie Cats) that moved a progression gate from level 30 to 40. Structured as a stakeholder-facing report: executive summary and recommendation, a statistical power check, a frequentist-vs-Bayesian comparison, the risk of stopping early on repeated peeking, and a Day-7 confirmatory check.",
+      tags: ["R", "Quarto", "A/B Testing", "Bayesian Statistics"],
       image: null,
       links: [
-        { label: "Read Write-up", url: "#", primary: true },
-        { label: "View Notebook", url: "#" }
+        { label: "Read Report", url: "reports/cookie-cats-ab-test.html", primary: true },
+        { label: "Source Code", url: "https://github.com/SHAH-MEER/EDA-Statistics/tree/master/ab-test-cookie-cats" }
       ]
     },
     {
