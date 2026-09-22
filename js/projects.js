@@ -116,7 +116,7 @@
       category: "eda",
       description: "R and Quarto case study on a mobile game A/B test (Cookie Cats) that moved a progression gate from level 30 to 40. Structured as a stakeholder-facing report: executive summary and recommendation, a statistical power check, a frequentist-vs-Bayesian comparison, the risk of stopping early on repeated peeking, and a Day-7 confirmatory check.",
       tags: ["R", "Quarto", "A/B Testing", "Bayesian Statistics"],
-      image: null,
+      image: "images/cookie-cats-ab-test.png",
       links: [
         { label: "Read Report", url: "reports/cookie-cats-ab-test.html", primary: true },
         { label: "Source Code", url: "https://github.com/SHAH-MEER/EDA-Statistics/tree/master/ab-test-cookie-cats" }
