@@ -11,7 +11,7 @@
   };
 
   var CATEGORY_DESCRIPTIONS = {
-    dataviz: "Dashboards and visual reporting built in Tableau — turning raw tables into something a stakeholder can act on in seconds.",
+    dataviz: "Dashboards and visual reporting built in Tableau and Excel — turning raw tables into something a stakeholder can act on in seconds.",
     datamodel: "Data modeling in Power BI — star schemas, relationships, and DAX measures that make the visuals possible. Modeling work only for now; visualization stays in Tableau.",
     sql: "Query-driven analysis against relational databases — cohort analysis, window functions, and pulling the right numbers out of messy schemas.",
     eda: "Exploratory data analysis and statistical testing in Python and R — understanding what's actually going on in a dataset before modeling it.",
@@ -24,7 +24,7 @@
   // show their full tag list; this only controls what's promoted to a
   // clickable filter. Add a tag here only if it's worth filtering by.
   var FILTERABLE_TAGS = new Set([
-    "Python", "R", "PostgreSQL", "Tableau", "Power BI", "PyTorch", "CV", "NLP", "Transformers"
+    "Python", "R", "PostgreSQL", "Tableau", "Excel", "Power BI", "PyTorch", "CV", "NLP", "Transformers"
   ]);
 
   // Tags reserved per category so a planned filter can appear before any
@@ -32,7 +32,7 @@
   // project actually tags (and that's in FILTERABLE_TAGS) shows up too —
   // this list just guarantees these appear even with zero matches today.
   var CATEGORY_RESERVED_TAGS = {
-    dataviz: ["Tableau"],
+    dataviz: ["Tableau", "Excel"],
     datamodel: ["Power BI"],
     dl: ["PyTorch", "CV", "NLP", "Transformers"]
   };
@@ -46,6 +46,7 @@
     { name: "Scikit-learn", fallback: "skl" },
     { name: "PyTorch", icon: "devicon-pytorch-original colored" },
     { name: "Tableau", fallback: "Tab" },
+    { name: "Excel", fallback: "XLS" },
     { name: "Power BI", fallback: "PBI" },
     { name: "Git", icon: "devicon-git-plain colored" },
     { name: "Jupyter", icon: "devicon-jupyter-plain colored" },
@@ -75,6 +76,28 @@
       image: "images/hr-dashboard-summary.svg",
       links: [
         { label: "View Dashboard", url: "https://public.tableau.com/app/profile/shahmeer.shahzad/viz/HRDashboard_17900316985570/HRSummary", primary: true }
+      ]
+    },
+    {
+      id: "excel-sales-dashboard",
+      title: "Interactive Sales Dashboard — Excel",
+      category: "dataviz",
+      description: "Fully interactive Excel dashboard for an outdoor/camping gear retailer's 2026 sales, built with PivotTables and native charting only — no Power BI or Tableau involved. Slicers for order date, customer type, region, and sales channel drive KPI cards, a revenue-vs-gross-profit trend, category and bestseller breakdowns, and a European revenue map; $645,223 in revenue across 6,698 units, led by Camping ($198,505) and Trail Boots (449 units sold).",
+      tags: ["Excel", "Data Viz"],
+      image: "images/sales-excel-dashboard.png",
+      links: [
+        { label: "View Project", url: "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fshah-meer.github.io%2Fexcel%2FInteractive%20Excel%20Sales%20Dashboard.xlsx", primary: true }
+      ]
+    },
+    {
+      id: "excel-water-sports-rentals",
+      title: "Water Sports Rentals Sales Dashboard — Excel",
+      category: "dataviz",
+      description: "Excel dashboard for a seasonal water-sports rental business — a 2026 annual report tracking $150,925 in revenue across exactly 3,000 rentals ($50.31 average) with a sharp July peak and steep spring/fall drop-off. Breaks performance down by booking channel (online bookings lead, ahead of walk-ins and resort guests), by team member (Ava Martinez tops the leaderboard), and by equipment (stand-up paddleboards and kayaks are the most-rented items).",
+      tags: ["Excel", "Data Viz"],
+      image: "images/water-sports-rentals-excel.png",
+      links: [
+        { label: "View Project", url: "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fshah-meer.github.io%2Fexcel%2FWater-Sports-Rentals-Sales-Dashboard-FINAL.xlsx", primary: true }
       ]
     },
     {
