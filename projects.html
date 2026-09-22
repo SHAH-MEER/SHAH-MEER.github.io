@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Shahmeer Shahzad</title>
+<meta name="description" content="Data science & analytics project showcase — machine learning, deep learning, SQL, EDA, and data visualization projects.">
+
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("theme");
+    if (t !== "light" && t !== "dark") {
+      t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    }
+    document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<button id="skip-link" class="skip-link" tabindex="0" onclick="document.getElementById('main').focus()">Skip to content</button>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a href="index.html#top" class="nav-brand">SS<span class="nav-brand-dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark and light mode" aria-pressed="false">
+      <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span class="toggle-track"><span class="toggle-thumb"></span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <section id="projects" class="projects container">
+    <h2 class="section-title"><span class="section-index">01</span> Project Showcase</h2>
+
+    <div class="project-controls">
+      <div class="tabs" id="category-tabs" role="tablist" aria-label="Project categories">
+        <button class="tab active" data-category="dataviz" role="tab" aria-selected="true">Data Visualization</button>
+        <button class="tab" data-category="sql" role="tab" aria-selected="false">SQL</button>
+        <button class="tab" data-category="eda" role="tab" aria-selected="false">EDA &amp; Statistics</button>
+        <button class="tab" data-category="ml" role="tab" aria-selected="false">Machine Learning</button>
+        <button class="tab" data-category="dl" role="tab" aria-selected="false">Deep Learning</button>
+      </div>
+
+      <p class="category-description" id="category-description"></p>
+
+      <div class="tag-filter-bar">
+        <span class="tag-filter-label">Filter by tag:</span>
+        <div class="tag-pills" id="tag-pills"></div>
+      </div>
+    </div>
+
+    <p class="filter-status" id="filter-status" hidden></p>
+
+    <div class="project-grid" id="project-grid"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Shahmeer Shahzad. Built with plain HTML, CSS &amp; JS — hosted on GitHub Pages.</p>
+  </div>
+</footer>
+
+<script src="js/theme.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>

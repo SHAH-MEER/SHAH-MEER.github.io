@@ -304,6 +304,81 @@ section { padding: 64px 24px; }
 
 .bio-block p { color: var(--text-muted); margin: 0 0 16px; }
 
+/* ---------- Experience & Education ---------- */
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid var(--border);
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+
+.timeline-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px 16px;
+}
+.timeline-header h4 { margin: 0; font-size: 1rem; }
+
+.timeline-org {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-strong);
+  white-space: nowrap;
+}
+
+.timeline-meta {
+  margin: 4px 0 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.timeline-details {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+.timeline-details li { line-height: 1.5; }
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
@@ -324,6 +399,15 @@ section { padding: 64px 24px; }
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
 .skill-chip:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.skills-cta {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-strong);
+}
+.skills-cta:hover { text-decoration: underline; }
 .skill-chip i { font-size: 1.5rem; color: var(--accent-strong); }
 .skill-chip .skill-fallback {
   font-family: var(--font-mono);
@@ -341,6 +425,7 @@ section { padding: 64px 24px; }
 
 .tabs {
   display: flex;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -565,6 +650,7 @@ section { padding: 64px 24px; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { order: -1; max-width: 260px; margin: 0 auto; }
   .about-grid { grid-template-columns: 1fr; }
+  .experience-grid { grid-template-columns: 1fr; }
   .nav-links { gap: 16px; font-size: 0.85rem; }
 }
 
