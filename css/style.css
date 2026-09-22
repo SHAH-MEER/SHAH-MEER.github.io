@@ -7,7 +7,7 @@
   --radius-md: 10px;
   --radius-lg: 16px;
 
-  --max-width: 1100px;
+  --max-width: 1320px;
 
   /* Dark mode (default) — blackish-purple */
   --bg: #12101a;
@@ -363,6 +363,13 @@ section { padding: 64px 24px; }
   color: var(--accent-contrast);
 }
 
+.category-description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 68ch;
+  margin: 0;
+}
+
 .tag-filter-bar {
   display: flex;
   align-items: center;
@@ -411,21 +418,50 @@ section { padding: 64px 24px; }
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
 }
 
 .project-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 12px;
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
 .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-thumb-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 14px 14px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-card-body {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
 
 .project-card-header {
   display: flex;
@@ -465,13 +501,30 @@ section { padding: 64px 24px; }
 
 .project-card-links {
   display: flex;
-  gap: 16px;
-  font-size: 0.85rem;
-  font-family: var(--font-mono);
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
   margin-top: 4px;
 }
-.project-card-links a { color: var(--accent-strong); }
-.project-card-links a:hover { text-decoration: underline; }
+
+.link-primary {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-contrast);
+  background: var(--accent);
+  padding: 7px 14px;
+  border-radius: 999px;
+  transition: background-color 0.15s ease;
+}
+.link-primary:hover { background: var(--accent-strong); }
+
+.link-secondary {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-strong);
+}
+.link-secondary:hover { text-decoration: underline; }
 
 .empty-state {
   color: var(--text-muted);

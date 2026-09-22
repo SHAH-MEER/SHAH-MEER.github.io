@@ -9,6 +9,14 @@
     dl: "Deep Learning"
   };
 
+  var CATEGORY_DESCRIPTIONS = {
+    dataviz: "Dashboards and visual reporting built in Tableau and Power BI — turning raw tables into something a stakeholder can act on in seconds.",
+    sql: "Query-driven analysis against relational databases — cohort analysis, window functions, and pulling the right numbers out of messy schemas.",
+    eda: "Exploratory data analysis and statistical testing in Python and R — understanding what's actually going on in a dataset before modeling it.",
+    ml: "Classical machine learning in Python and R — feature engineering, model selection, and evaluation on structured, tabular data.",
+    dl: "Deep learning built in PyTorch — computer vision, NLP, and transformer-based models trained and fine-tuned from scratch."
+  };
+
   var skills = [
     { name: "Python", icon: "devicon-python-plain colored" },
     { name: "R", icon: "devicon-r-original colored" },
@@ -28,20 +36,26 @@
   // add a new one here (and give it a unique id) to add a card to the site.
   var projects = [
     {
-      id: "retail-sales-dashboard",
-      title: "Retail Sales Performance Dashboard",
+      id: "tableau-sales-customer-dashboard",
+      title: "Sales & Customer Dashboard",
       category: "dataviz",
-      description: "Interactive Tableau dashboard tracking sales, margin, and regional performance across a simulated retail chain.",
+      description: "Single Tableau workbook with two linked, navigable dashboards. Sales: KPI overview vs. prior year, monthly trends with high/low markers, subcategory sales-vs-profit, weekly trends with reference-line highlighting. Customer: KPI overview, order-count distribution, top 10 customers by profit. Filters for category, region, and year.",
       tags: ["Tableau", "Data Viz"],
-      links: { repo: "#", writeup: "#" }
+      image: "images/sales-customer-dashboard.svg",
+      links: [
+        { label: "View Dashboard", url: "https://public.tableau.com/app/profile/shahmeer.shahzad/viz/SalesCustomerDashboards_17900316327280/CustomerDashboard", primary: true }
+      ]
     },
     {
-      id: "regional-revenue-tracker",
-      title: "Regional Revenue Tracker",
+      id: "tableau-hr-dashboard",
+      title: "HR Dashboard",
       category: "dataviz",
-      description: "Power BI report with DAX measures for YoY revenue comparisons and drill-down by region and product line.",
-      tags: ["Power BI", "DAX"],
-      links: { repo: "#", writeup: "#" }
+      description: "HR analytics dashboard covering hiring/termination trends, department and HQ-vs-branch breakdowns, a location map, demographic analysis (gender, age, education), and salary analysis by education/gender/department. Built on a synthetic dataset of ~8,950 HR records generated via a documented Python/ChatGPT pipeline.",
+      tags: ["Tableau", "Data Viz"],
+      image: "images/hr-dashboard-summary.svg",
+      links: [
+        { label: "View Dashboard", url: "https://public.tableau.com/app/profile/shahmeer.shahzad/viz/HRDashboard_17900316985570/HRSummary", primary: true }
+      ]
     },
     {
       id: "ecommerce-sql-analysis",
@@ -49,7 +63,11 @@
       category: "sql",
       description: "Complex SQL queries over an e-commerce dataset — cohort retention, repeat purchase rate, and order value trends.",
       tags: ["SQL", "PostgreSQL"],
-      links: { repo: "#", writeup: "#" }
+      image: null,
+      links: [
+        { label: "Read Write-up", url: "#", primary: true },
+        { label: "View Queries", url: "#" }
+      ]
     },
     {
       id: "attrition-sql-deepdive",
@@ -57,7 +75,11 @@
       category: "sql",
       description: "Window-function-heavy SQL exploring attrition patterns by department, tenure, and compensation band.",
       tags: ["SQL", "Window Functions"],
-      links: { repo: "#", writeup: "#" }
+      image: null,
+      links: [
+        { label: "Read Write-up", url: "#", primary: true },
+        { label: "View Queries", url: "#" }
+      ]
     },
     {
       id: "housing-eda",
@@ -65,7 +87,11 @@
       category: "eda",
       description: "Exploratory data analysis in Python identifying the strongest predictors of housing price in a public dataset.",
       tags: ["Python", "Pandas", "Statistics"],
-      links: { repo: "#", writeup: "#" }
+      image: null,
+      links: [
+        { label: "Read Write-up", url: "#", primary: true },
+        { label: "View Notebook", url: "#" }
+      ]
     },
     {
       id: "churn-eda-r",
@@ -73,7 +99,11 @@
       category: "eda",
       description: "R-based exploratory analysis of telecom customer churn, with hypothesis testing on key churn drivers.",
       tags: ["R", "Statistics"],
-      links: { repo: "#", writeup: "#" }
+      image: null,
+      links: [
+        { label: "Read Write-up", url: "#", primary: true },
+        { label: "View Notebook", url: "#" }
+      ]
     },
     {
       id: "credit-default-classifier",
@@ -81,7 +111,11 @@
       category: "ml",
       description: "Gradient-boosted classifier predicting loan default risk, with feature importance and threshold tuning for recall.",
       tags: ["Python", "Scikit-learn"],
-      links: { repo: "#", writeup: "#" }
+      image: null,
+      links: [
+        { label: "View Project", url: "#", primary: true },
+        { label: "Source Code", url: "#" }
+      ]
     },
     {
       id: "house-price-regression",
@@ -89,23 +123,46 @@
       category: "ml",
       description: "Regularized regression models (Ridge/Lasso) in R for house price prediction with cross-validated tuning.",
       tags: ["R", "Regression"],
-      links: { repo: "#", writeup: "#" }
+      image: null,
+      links: [
+        { label: "Read Write-up", url: "#", primary: true },
+        { label: "Source Code", url: "#" }
+      ]
     },
     {
-      id: "cnn-image-classification",
-      title: "Image Classification with CNNs",
+      id: "chest-xray-ensemble-cnn",
+      title: "Chest X-Ray Ensemble CNN Classification",
       category: "dl",
-      description: "Convolutional network built in PyTorch for multi-class image classification, trained from scratch and fine-tuned.",
-      tags: ["PyTorch", "CV"],
-      links: { repo: "#", writeup: "#" }
+      description: "Ensemble convolutional neural network for classifying chest X-ray images, trained on GPU. Co-authored into a peer-reviewed publication in Medical Research Archives.",
+      tags: ["PyTorch", "CV", "Ensemble", "Published Research"],
+      image: "images/chest-xray-ensemble-cnn.png",
+      links: [
+        { label: "Read Publication", url: "#", primary: true }
+      ]
     },
     {
-      id: "transformer-sentiment",
-      title: "Sentiment Analysis with Transformers",
+      id: "wildfire-risk-mapping",
+      title: "Wildfire Risk Mapping",
       category: "dl",
-      description: "Fine-tuned transformer model in PyTorch for sentiment classification on review text.",
-      tags: ["PyTorch", "NLP", "Transformers"],
-      links: { repo: "#", writeup: "#" }
+      description: "Computer vision model classifying wildfire risk from imagery using ResNet18 with Grad-CAM for explainability. 98.75% accuracy, 0.999 ROC-AUC. Deployed live via Gradio on Hugging Face Spaces.",
+      tags: ["PyTorch", "CV", "ResNet18", "Grad-CAM"],
+      image: "images/wildfire-risk-mapping.png",
+      links: [
+        { label: "View Project", url: "https://huggingface.co/spaces/SHAH-MEER/wildfire-risk-mapping", primary: true },
+        { label: "Source Code", url: "#" }
+      ]
+    },
+    {
+      id: "gnn-fraud-detection",
+      title: "GNN Fraud Detection",
+      category: "dl",
+      description: "Fraud detection comparison on the Elliptic Bitcoin transaction dataset — XGBoost vs. GraphSAGE (GNN) with a temporal train/test split. XGBoost won on every metric (PR-AUC 0.80 vs. 0.50); diagnosed post-timestep-43 concept drift as a likely driver of the GNN's weaker performance, then tested a recency-weighting mitigation strategy.",
+      tags: ["PyTorch", "GraphSAGE", "XGBoost", "Graph Neural Networks", "Concept Drift"],
+      image: "images/gnn-fraud-detection.png",
+      links: [
+        { label: "View Project", url: "https://huggingface.co/spaces/SHAH-MEER/gnn-fraud-detection", primary: true },
+        { label: "Source Code", url: "#" }
+      ]
     }
   ];
 
@@ -145,9 +202,26 @@
     });
   }
 
+  function thumbHTML(p) {
+    if (p.image) {
+      return '<img class="project-thumb" src="' + p.image + '" alt="' + p.title + ' preview" loading="lazy">';
+    }
+    return '<div class="project-thumb project-thumb-placeholder" aria-hidden="true"><span>' +
+      CATEGORY_LABELS[p.category] + "</span></div>";
+  }
+
+  function linksHTML(p) {
+    return p.links.map(function (l) {
+      var cls = l.primary ? "link-primary" : "link-secondary";
+      return '<a class="' + cls + '" href="' + l.url + '" target="_blank" rel="noopener">' + l.label + " &rarr;</a>";
+    }).join("");
+  }
+
   function cardHTML(p) {
     return (
       '<article class="project-card">' +
+      thumbHTML(p) +
+      '<div class="project-card-body">' +
       '<div class="project-card-header">' +
       "<h3>" + p.title + "</h3>" +
       '<span class="project-category-badge">' + CATEGORY_LABELS[p.category] + "</span>" +
@@ -156,12 +230,21 @@
       '<div class="project-card-tags">' +
       p.tags.map(function (t) { return "<span>" + t + "</span>"; }).join("") +
       "</div>" +
-      '<div class="project-card-links">' +
-      '<a href="' + p.links.repo + '" target="_blank" rel="noopener">Repo &rarr;</a>' +
-      '<a href="' + p.links.writeup + '" target="_blank" rel="noopener">Write-up &rarr;</a>' +
+      '<div class="project-card-links">' + linksHTML(p) + "</div>" +
       "</div>" +
       "</article>"
     );
+  }
+
+  function renderCategoryDescription() {
+    var el = document.getElementById("category-description");
+    if (!el) return;
+    if (state.tag) {
+      el.hidden = true;
+      return;
+    }
+    el.hidden = false;
+    el.textContent = CATEGORY_DESCRIPTIONS[state.category] || "";
   }
 
   function renderProjects() {
@@ -199,6 +282,7 @@
   function render() {
     renderTagPills();
     renderTabs();
+    renderCategoryDescription();
     renderProjects();
   }
 
