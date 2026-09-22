@@ -187,6 +187,13 @@
     }
   ];
 
+  // Exposed so other pages (e.g. the printable project summary) can reuse
+  // this data as the single source of truth instead of duplicating it.
+  window.SiteData = {
+    projects: projects,
+    categoryLabels: CATEGORY_LABELS
+  };
+
   var state = { category: "dataviz", tag: null };
 
   function renderSkills() {

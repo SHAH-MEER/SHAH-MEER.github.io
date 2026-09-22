@@ -293,6 +293,8 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.95rem;
 }
 
+.section-subaction { margin: -24px 0 32px; }
+
 section { padding: 64px 24px; }
 
 /* Alternate section banding so the page isn't one flat scroll */
@@ -672,6 +674,60 @@ main > section:nth-of-type(even) {
   text-align: center;
 }
 .footer-social { justify-content: center; }
+
+/* ---------- Project Summary (printable) ---------- */
+.summary-page { padding: 56px 24px 64px; }
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.summary-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.summary-meta {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin: 0 0 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.summary-meta a { color: var(--accent-strong); }
+.summary-meta a:hover { text-decoration: underline; }
+
+.summary-category { margin-bottom: 36px; }
+.summary-category h2 {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--accent-strong);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin: 0 0 16px;
+}
+
+.summary-project { margin: 0 0 20px; }
+.summary-project h3 { margin: 0 0 6px; font-size: 1.02rem; }
+.summary-project h3 a { color: var(--accent-strong); }
+.summary-project h3 a:hover { text-decoration: underline; }
+.summary-project p { margin: 0 0 6px; color: var(--text-muted); font-size: 0.9rem; }
+
+.summary-tags { font-family: var(--font-mono); font-size: 0.75rem !important; }
+.summary-links { font-family: var(--font-mono); font-size: 0.78rem !important; }
+.summary-links a { color: var(--accent-strong); }
+.summary-links a:hover { text-decoration: underline; }
+
+@media print {
+  @page { margin: 16mm 14mm; }
+  .no-print { display: none !important; }
+  body { background-image: none; }
+  .site-header, .site-footer { display: none !important; }
+  .summary-category, .summary-project { break-inside: avoid; page-break-inside: avoid; }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
