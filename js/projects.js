@@ -137,7 +137,9 @@
       tags: ["PyTorch", "CV", "Ensemble", "Published Research"],
       image: "images/chest-xray-ensemble-cnn.png",
       links: [
-        { label: "Read Publication", url: "#", primary: true }
+        { label: "View Project", url: "https://huggingface.co/spaces/SHAH-MEER/CXR-Ensemble", primary: true },
+        { label: "Read Publication", url: "https://esmed.org/MRA/mra/article/view/7065" },
+        { label: "DOI", url: "https://doi.org/10.18103/mra.v13i11.7065" }
       ]
     },
     {
