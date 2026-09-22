@@ -149,6 +149,18 @@
       ]
     },
     {
+      id: "churn-prediction-ml",
+      title: "Customer Churn Prediction",
+      category: "ml",
+      description: "End-to-end customer churn pipeline on the Telco Customer Churn dataset, built entirely on free tooling. Pandera-validated features feed three candidate models (Logistic Regression, XGBoost, LightGBM) tuned with Optuna and tracked in MLflow, with the best run promoted through the MLflow Model Registry. Deployed as a Gradio app on Hugging Face Spaces with per-prediction SHAP explanations, a model-comparison view, and an Evidently drift report; GitHub Actions CI validates data on every push and retrains/re-registers whenever the validation metric improves.",
+      tags: ["Python", "Scikit-learn", "XGBoost", "MLflow", "SHAP"],
+      image: "images/churn-prediction-ml.png",
+      links: [
+        { label: "View Project", url: "https://huggingface.co/spaces/SHAH-MEER/churn-prediction", primary: true },
+        { label: "Source Code", url: "https://github.com/SHAH-MEER/churn-prediction" }
+      ]
+    },
+    {
       id: "chest-xray-ensemble-cnn",
       title: "Chest X-Ray Ensemble CNN Classification",
       category: "dl",
