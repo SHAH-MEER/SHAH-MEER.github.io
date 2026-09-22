@@ -134,12 +134,11 @@
       title: "Chest X-Ray Ensemble CNN Classification",
       category: "dl",
       description: "Ensemble convolutional neural network for classifying chest X-ray images, trained on GPU. Co-authored into a peer-reviewed publication in Medical Research Archives.",
-      tags: ["PyTorch", "CV", "Ensemble", "Published Research"],
+      tags: ["PyTorch", "CV","Grad-CAM"],
       image: "images/chest-xray-ensemble-cnn.png",
       links: [
         { label: "View Project", url: "https://huggingface.co/spaces/SHAH-MEER/CXR-Ensemble", primary: true },
-        { label: "Read Publication", url: "https://esmed.org/MRA/mra/article/view/7065" },
-        { label: "DOI", url: "https://doi.org/10.18103/mra.v13i11.7065" }
+        { label: "Read Publication", url: "https://esmed.org/MRA/mra/article/view/7065" }
       ]
     },
     {
