@@ -155,7 +155,8 @@
       image: "images/chest-xray-ensemble-cnn.png",
       links: [
         { label: "View Project", url: "https://huggingface.co/spaces/SHAH-MEER/CXR-Ensemble", primary: true },
-        { label: "Read Publication", url: "https://esmed.org/MRA/mra/article/view/7065" }
+        { label: "Read Publication", url: "https://esmed.org/MRA/mra/article/view/7065" },
+        { label: "Source Code", url: "https://github.com/SHAH-MEER/CXR-Ensemble" }
       ]
     },
     {
@@ -167,7 +168,7 @@
       image: "images/wildfire-risk-mapping.png",
       links: [
         { label: "View Project", url: "https://huggingface.co/spaces/SHAH-MEER/wildfire-risk-mapping", primary: true },
-        { label: "Source Code", url: "#" }
+        { label: "Source Code", url: "https://github.com/SHAH-MEER/WildfireRiskMaping" }
       ]
     },
     {
@@ -179,7 +180,7 @@
       image: "images/gnn-fraud-detection.png",
       links: [
         { label: "View Project", url: "https://huggingface.co/spaces/SHAH-MEER/gnn-fraud-detection", primary: true },
-        { label: "Source Code", url: "#" }
+        { label: "Source Code", url: "https://github.com/SHAH-MEER/GNNFraudDetecttion" }
       ]
     }
   ];
