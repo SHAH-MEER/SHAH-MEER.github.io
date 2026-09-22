@@ -3,6 +3,7 @@
 
   var CATEGORY_LABELS = {
     dataviz: "Data Visualization",
+    datamodel: "Data Modeling",
     sql: "SQL",
     eda: "EDA & Statistics",
     ml: "Machine Learning",
@@ -10,7 +11,8 @@
   };
 
   var CATEGORY_DESCRIPTIONS = {
-    dataviz: "Dashboards and visual reporting built in Tableau and Power BI — turning raw tables into something a stakeholder can act on in seconds.",
+    dataviz: "Dashboards and visual reporting built in Tableau — turning raw tables into something a stakeholder can act on in seconds.",
+    datamodel: "Data modeling in Power BI — star schemas, relationships, and DAX measures that make the visuals possible. Modeling work only for now; visualization stays in Tableau.",
     sql: "Query-driven analysis against relational databases — cohort analysis, window functions, and pulling the right numbers out of messy schemas.",
     eda: "Exploratory data analysis and statistical testing in Python and R — understanding what's actually going on in a dataset before modeling it.",
     ml: "Classical machine learning in Python and R — feature engineering, model selection, and evaluation on structured, tabular data.",
@@ -30,7 +32,8 @@
   // project actually tags (and that's in FILTERABLE_TAGS) shows up too —
   // this list just guarantees these appear even with zero matches today.
   var CATEGORY_RESERVED_TAGS = {
-    dataviz: ["Tableau", "Power BI"],
+    dataviz: ["Tableau"],
+    datamodel: ["Power BI"],
     dl: ["PyTorch", "CV", "NLP", "Transformers"]
   };
 
@@ -49,8 +52,8 @@
     { name: "Statistics", fallback: "Σ" }
   ];
 
-  // Placeholder projects — replace with real work. Each project is one object;
-  // add a new one here (and give it a unique id) to add a card to the site.
+  // Each project is one object; add a new one here (and give it a unique id)
+  // to add a card to the site.
   var projects = [
     {
       id: "tableau-sales-customer-dashboard",
@@ -75,46 +78,10 @@
       ]
     },
     {
-      id: "ecommerce-sql-analysis",
-      title: "E-commerce Orders Analysis",
-      category: "sql",
-      description: "Complex SQL queries over an e-commerce dataset — cohort retention, repeat purchase rate, and order value trends.",
-      tags: ["SQL", "PostgreSQL"],
-      image: null,
-      links: [
-        { label: "Read Write-up", url: "#", primary: true },
-        { label: "View Queries", url: "#" }
-      ]
-    },
-    {
-      id: "attrition-sql-deepdive",
-      title: "Employee Attrition Query Deep-Dive",
-      category: "sql",
-      description: "Window-function-heavy SQL exploring attrition patterns by department, tenure, and compensation band.",
-      tags: ["SQL", "Window Functions"],
-      image: null,
-      links: [
-        { label: "Read Write-up", url: "#", primary: true },
-        { label: "View Queries", url: "#" }
-      ]
-    },
-    {
-      id: "housing-eda",
-      title: "Exploring Housing Price Drivers",
-      category: "eda",
-      description: "Exploratory data analysis in Python identifying the strongest predictors of housing price in a public dataset.",
-      tags: ["Python", "Pandas", "Statistics"],
-      image: null,
-      links: [
-        { label: "Read Write-up", url: "#", primary: true },
-        { label: "View Notebook", url: "#" }
-      ]
-    },
-    {
       id: "cookie-cats-ab-test",
       title: "Cookie Cats A/B Test Case Study",
       category: "eda",
-      description: "R and Quarto case study on a mobile game A/B test (Cookie Cats) that moved a progression gate from level 30 to 40. Structured as a stakeholder-facing report: executive summary and recommendation, a statistical power check, a frequentist-vs-Bayesian comparison, the risk of stopping early on repeated peeking, and a Day-7 confirmatory check.",
+      description: "Does moving the game's first progression gate from level 30 to 40 change player retention? Frequentist and Bayesian analysis of a real mobile-game A/B test, including the cost of peeking early.",
       tags: ["R", "Quarto", "A/B Testing", "Bayesian Statistics"],
       image: "images/cookie-cats-ab-test.png",
       links: [
@@ -123,27 +90,27 @@
       ]
     },
     {
-      id: "credit-default-classifier",
-      title: "Credit Default Risk Classifier",
-      category: "ml",
-      description: "Gradient-boosted classifier predicting loan default risk, with feature importance and threshold tuning for recall.",
-      tags: ["Python", "Scikit-learn"],
-      image: null,
+      id: "financial-markets-eda",
+      title: "Financial Markets Return Normality Case Study",
+      category: "eda",
+      description: "Are daily stock returns normally distributed, and what breaks in models (like Value-at-Risk) that assume they are? SPY plus 7 sector-diverse stocks, 2011–present.",
+      tags: ["Python", "Quarto", "Statistics", "Time Series"],
+      image: "images/financial-markets-py.png",
       links: [
-        { label: "View Project", url: "#", primary: true },
-        { label: "Source Code", url: "#" }
+        { label: "Read Report", url: "reports/financial-markets-eda.html", primary: true },
+        { label: "Source Code", url: "https://github.com/SHAH-MEER/EDA-Statistics/tree/master/financial-markets-eda" }
       ]
     },
     {
-      id: "house-price-regression",
-      title: "House Price Prediction",
-      category: "ml",
-      description: "Regularized regression models (Ridge/Lasso) in R for house price prediction with cross-validated tuning.",
-      tags: ["R", "Regression"],
-      image: null,
+      id: "fandango-ratings-eda",
+      title: "Fandango Ratings Bias Case Study",
+      category: "eda",
+      description: "Were Fandango's 2015 displayed movie ratings systematically inflated above their own true ratings and above Rotten Tomatoes/Metacritic/IMDb, consistent with a ticket-selling conflict of interest? Based on FiveThirtyEight's original investigation.",
+      tags: ["Python", "Quarto", "Statistics"],
+      image: "images/fandango-vs-538.png",
       links: [
-        { label: "Read Write-up", url: "#", primary: true },
-        { label: "Source Code", url: "#" }
+        { label: "Read Report", url: "reports/fandango-ratings-eda.html", primary: true },
+        { label: "Source Code", url: "https://github.com/SHAH-MEER/EDA-Statistics/tree/master/fandango-ratings-eda" }
       ]
     },
     {

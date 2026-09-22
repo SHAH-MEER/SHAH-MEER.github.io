@@ -34,7 +34,7 @@
     <ul class="nav-links">
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#experience">Experience</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="projects.html" aria-current="page">Projects</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark and light mode" aria-pressed="false">
@@ -53,6 +53,7 @@
     <div class="project-controls">
       <div class="tabs" id="category-tabs" role="tablist" aria-label="Project categories">
         <button class="tab active" data-category="dataviz" role="tab" aria-selected="true">Data Visualization</button>
+        <button class="tab" data-category="datamodel" role="tab" aria-selected="false">Data Modeling</button>
         <button class="tab" data-category="sql" role="tab" aria-selected="false">SQL</button>
         <button class="tab" data-category="eda" role="tab" aria-selected="false">EDA &amp; Statistics</button>
         <button class="tab" data-category="ml" role="tab" aria-selected="false">Machine Learning</button>
@@ -76,6 +77,11 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
+    <ul class="social-links footer-social" aria-label="Social links">
+      <li><a href="https://github.com/SHAH-MEER" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/shahmeer-shahzad-790b67356/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:shahmeershahzad67@gmail.com">Email</a></li>
+    </ul>
     <p>&copy; <span id="year"></span> Shahmeer Shahzad. Built with plain HTML, CSS &amp; JS — hosted on GitHub Pages.</p>
   </div>
 </footer>

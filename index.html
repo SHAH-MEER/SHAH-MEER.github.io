@@ -32,7 +32,7 @@
   <nav class="nav container">
     <a href="#top" class="nav-brand">SS<span class="nav-brand-dot">.</span></a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+      <li><a href="#about" aria-current="page">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="blog/index.html">Blog</a></li>
@@ -61,35 +61,77 @@
           <a href="projects.html" class="btn btn-ghost">View Projects</a>
         </div>
         <ul class="social-links" aria-label="Social links">
-          <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/SHAH-MEER" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/shahmeer-shahzad-790b67356/" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="mailto:shahmeershahzad67@gmail.com">Email</a></li>
-          <li><a href="https://kaggle.com/" target="_blank" rel="noopener">Kaggle</a></li>
         </ul>
       </div>
 
       <div class="hero-visual" aria-hidden="true">
         <svg viewBox="0 0 400 400" class="node-graphic">
-          <g class="grid-dots"></g>
           <g class="graph-lines">
-            <line x1="80" y1="120" x2="200" y2="80"/>
-            <line x1="80" y1="120" x2="140" y2="230"/>
-            <line x1="200" y1="80" x2="320" y2="140"/>
-            <line x1="200" y1="80" x2="230" y2="220"/>
-            <line x1="140" y1="230" x2="230" y2="220"/>
-            <line x1="140" y1="230" x2="110" y2="330"/>
-            <line x1="230" y1="220" x2="320" y2="140"/>
-            <line x1="230" y1="220" x2="300" y2="310"/>
-            <line x1="320" y1="140" x2="300" y2="310"/>
+            <!-- input -> hidden 1 -->
+            <line x1="50" y1="100" x2="160" y2="40"/>
+            <line x1="50" y1="100" x2="160" y2="120"/>
+            <line x1="50" y1="100" x2="160" y2="200"/>
+            <line x1="50" y1="100" x2="160" y2="280"/>
+            <line x1="50" y1="100" x2="160" y2="360"/>
+            <line x1="50" y1="200" x2="160" y2="40"/>
+            <line x1="50" y1="200" x2="160" y2="120"/>
+            <line x1="50" y1="200" x2="160" y2="200"/>
+            <line x1="50" y1="200" x2="160" y2="280"/>
+            <line x1="50" y1="200" x2="160" y2="360"/>
+            <line x1="50" y1="300" x2="160" y2="40"/>
+            <line x1="50" y1="300" x2="160" y2="120"/>
+            <line x1="50" y1="300" x2="160" y2="200"/>
+            <line x1="50" y1="300" x2="160" y2="280"/>
+            <line x1="50" y1="300" x2="160" y2="360"/>
+            <!-- hidden 1 -> hidden 2 -->
+            <line x1="160" y1="40" x2="270" y2="70"/>
+            <line x1="160" y1="40" x2="270" y2="157"/>
+            <line x1="160" y1="40" x2="270" y2="243"/>
+            <line x1="160" y1="40" x2="270" y2="330"/>
+            <line x1="160" y1="120" x2="270" y2="70"/>
+            <line x1="160" y1="120" x2="270" y2="157"/>
+            <line x1="160" y1="120" x2="270" y2="243"/>
+            <line x1="160" y1="120" x2="270" y2="330"/>
+            <line x1="160" y1="200" x2="270" y2="70"/>
+            <line x1="160" y1="200" x2="270" y2="157"/>
+            <line x1="160" y1="200" x2="270" y2="243"/>
+            <line x1="160" y1="200" x2="270" y2="330"/>
+            <line x1="160" y1="280" x2="270" y2="70"/>
+            <line x1="160" y1="280" x2="270" y2="157"/>
+            <line x1="160" y1="280" x2="270" y2="243"/>
+            <line x1="160" y1="280" x2="270" y2="330"/>
+            <line x1="160" y1="360" x2="270" y2="70"/>
+            <line x1="160" y1="360" x2="270" y2="157"/>
+            <line x1="160" y1="360" x2="270" y2="243"/>
+            <line x1="160" y1="360" x2="270" y2="330"/>
+            <!-- hidden 2 -> output -->
+            <line x1="270" y1="70" x2="370" y2="150"/>
+            <line x1="270" y1="70" x2="370" y2="250"/>
+            <line x1="270" y1="157" x2="370" y2="150"/>
+            <line x1="270" y1="157" x2="370" y2="250"/>
+            <line x1="270" y1="243" x2="370" y2="150"/>
+            <line x1="270" y1="243" x2="370" y2="250"/>
+            <line x1="270" y1="330" x2="370" y2="150"/>
+            <line x1="270" y1="330" x2="370" y2="250"/>
           </g>
           <g class="graph-nodes">
-            <circle cx="80" cy="120" r="7"/>
-            <circle cx="200" cy="80" r="10"/>
-            <circle cx="320" cy="140" r="8"/>
-            <circle cx="140" cy="230" r="6"/>
-            <circle cx="230" cy="220" r="11"/>
-            <circle cx="110" cy="330" r="7"/>
-            <circle cx="300" cy="310" r="9"/>
+            <circle class="layer-in" cx="50" cy="100" r="7"/>
+            <circle class="layer-in" cx="50" cy="200" r="7"/>
+            <circle class="layer-in" cx="50" cy="300" r="7"/>
+            <circle class="layer-h1" cx="160" cy="40" r="6"/>
+            <circle class="layer-h1" cx="160" cy="120" r="6"/>
+            <circle class="layer-h1" cx="160" cy="200" r="6"/>
+            <circle class="layer-h1" cx="160" cy="280" r="6"/>
+            <circle class="layer-h1" cx="160" cy="360" r="6"/>
+            <circle class="layer-h2" cx="270" cy="70" r="6"/>
+            <circle class="layer-h2" cx="270" cy="157" r="6"/>
+            <circle class="layer-h2" cx="270" cy="243" r="6"/>
+            <circle class="layer-h2" cx="270" cy="330" r="6"/>
+            <circle class="layer-out" cx="370" cy="150" r="9"/>
+            <circle class="layer-out" cx="370" cy="250" r="9"/>
           </g>
         </svg>
       </div>
@@ -108,8 +150,8 @@
 
       <div class="bio-block">
         <h3 class="block-heading">Background</h3>
-        <p>I'm a data science student focused on turning messy, real-world data into models and dashboards people can actually use. My work spans classical Machine Learning, Deep Learning with PyTorch, SQL-driven analysis, and Dashboarding in Tableau/Power BI.</p>
-        <p>I'm currently applying for data science and data analyst roles, I like the analyst side of the work (asking the right question, finding the story in the data) as much as the modeling side.</p>
+        <p>My background is actually in public health, not computer science — I spent four years on a BSc in Public Health before this, including a year as a research associate running longitudinal statistical analysis on wellness outcomes for officer training cohorts. That's part of why I ended up in data science: I was already asking research questions and testing hypotheses, just with SPSS instead of Python.</p>
+        <p>I'm now doing an MSc in Data Science at the University of Leicester, and the throughline from public health to here is epidemiology and health surveillance — data science applied somewhere the stakes are real, not just a Kaggle leaderboard. I care as much about framing the right question and finding the story in the data as I do about the modeling itself.</p>
       </div>
     </div>
   </section>
@@ -163,6 +205,11 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
+    <ul class="social-links footer-social" aria-label="Social links">
+      <li><a href="https://github.com/SHAH-MEER" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/shahmeer-shahzad-790b67356/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:shahmeershahzad67@gmail.com">Email</a></li>
+    </ul>
     <p>&copy; <span id="year"></span> Shahmeer Shahzad. Built with plain HTML, CSS &amp; JS — hosted on GitHub Pages.</p>
   </div>
 </footer>
