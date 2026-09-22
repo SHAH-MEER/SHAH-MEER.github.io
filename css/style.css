@@ -372,7 +372,6 @@ section { padding: 64px 24px; }
 .category-description {
   color: var(--text-muted);
   font-size: 0.95rem;
-  max-width: 68ch;
   margin: 0;
   background: var(--bg-elevated);
   border: 1px solid var(--border);

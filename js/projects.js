@@ -180,18 +180,22 @@
     }).join("");
   }
 
-  function allTags() {
+  // Scoped to the active tab so the pill list stays short as more projects
+  // are added, rather than accumulating every tag across every category.
+  function tagsForActiveCategory() {
     var set = {};
-    projects.forEach(function (p) {
-      p.tags.forEach(function (t) { set[t] = true; });
-    });
+    projects
+      .filter(function (p) { return p.category === state.category; })
+      .forEach(function (p) {
+        p.tags.forEach(function (t) { set[t] = true; });
+      });
     return Object.keys(set).sort();
   }
 
   function renderTagPills() {
     var wrap = document.getElementById("tag-pills");
     if (!wrap) return;
-    wrap.innerHTML = allTags().map(function (tag) {
+    wrap.innerHTML = tagsForActiveCategory().map(function (tag) {
       var active = state.tag === tag ? " active" : "";
       return '<button class="tag-pill' + active + '" data-tag="' + tag + '">' + tag + "</button>";
     }).join("");
