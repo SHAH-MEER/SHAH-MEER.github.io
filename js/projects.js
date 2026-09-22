@@ -17,6 +17,13 @@
     dl: "Deep learning built in PyTorch — computer vision, NLP, and transformer-based models trained and fine-tuned from scratch."
   };
 
+  // Curated whitelist for the "Filter by tag" pills — deliberately just
+  // languages/tools, not techniques. Project cards still show their full
+  // tag list; this only controls what's promoted to a clickable filter,
+  // so it stays short as more projects (and more one-off tags) get added.
+  // Add a tag here only if it's worth filtering the whole category by.
+  var FILTERABLE_TAGS = new Set(["Python", "R", "PostgreSQL", "Tableau", "Power BI", "PyTorch"]);
+
   var skills = [
     { name: "Python", icon: "devicon-python-plain colored" },
     { name: "R", icon: "devicon-r-original colored" },
@@ -180,14 +187,17 @@
     }).join("");
   }
 
-  // Scoped to the active tab so the pill list stays short as more projects
-  // are added, rather than accumulating every tag across every category.
+  // Scoped to the active tab, and filtered down to FILTERABLE_TAGS, so the
+  // pill list stays short as more projects (and more descriptive tags) are
+  // added rather than accumulating every tag across every category.
   function tagsForActiveCategory() {
     var set = {};
     projects
       .filter(function (p) { return p.category === state.category; })
       .forEach(function (p) {
-        p.tags.forEach(function (t) { set[t] = true; });
+        p.tags.forEach(function (t) {
+          if (FILTERABLE_TAGS.has(t)) set[t] = true;
+        });
       });
     return Object.keys(set).sort();
   }
