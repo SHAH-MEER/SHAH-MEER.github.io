@@ -11,15 +11,15 @@
   };
 
   var CATEGORY_DESCRIPTIONS = {
-    dataviz: "Dashboards and visual reporting built in Tableau and Excel — turning raw tables into something a stakeholder can act on in seconds.",
-    datamodel: "Data modeling in Power BI — star schemas, relationships, and DAX measures that make the visuals possible. Modeling work only for now; visualization stays in Tableau.",
-    sql: "Query-driven analysis against relational databases — cohort analysis, window functions, and pulling the right numbers out of messy schemas.",
-    eda: "Exploratory data analysis and statistical testing in Python and R — understanding what's actually going on in a dataset before modeling it.",
-    ml: "Classical machine learning in Python and R — feature engineering, model selection, and evaluation on structured, tabular data.",
-    dl: "Deep learning built in PyTorch — computer vision, NLP, and transformer-based models trained and fine-tuned from scratch."
+    dataviz: "Dashboards and visual reporting built in Tableau and Excel - turning raw tables into something a stakeholder can act on in seconds.",
+    datamodel: "Data modeling in Power BI - star schemas, relationships, and DAX measures that make the visuals possible. Modeling work only for now; visualization stays in Tableau.",
+    sql: "Query-driven analysis against relational databases - cohort analysis, window functions, and pulling the right numbers out of messy schemas.",
+    eda: "Exploratory data analysis and statistical testing in Python and R - understanding what's actually going on in a dataset before modeling it.",
+    ml: "Classical machine learning in Python and R - feature engineering, model selection, and evaluation on structured, tabular data.",
+    dl: "Deep learning built in PyTorch - computer vision, NLP, and transformer-based models trained and fine-tuned from scratch."
   };
 
-  // Curated whitelist for the "Filter by tag" pills — deliberately just
+  // Curated whitelist for the "Filter by tag" pills - deliberately just
   // languages/tools/subfields, not one-off techniques. Project cards still
   // show their full tag list; this only controls what's promoted to a
   // clickable filter. Add a tag here only if it's worth filtering by.
@@ -29,7 +29,7 @@
 
   // Tags reserved per category so a planned filter can appear before any
   // project uses it yet (e.g. NLP work you haven't published). Anything a
-  // project actually tags (and that's in FILTERABLE_TAGS) shows up too —
+  // project actually tags (and that's in FILTERABLE_TAGS) shows up too -
   // this list just guarantees these appear even with zero matches today.
   var CATEGORY_RESERVED_TAGS = {
     dataviz: ["Tableau", "Excel"],
@@ -60,7 +60,7 @@
       id: "tableau-sales-customer-dashboard",
       title: "Sales & Customer Dashboard",
       category: "dataviz",
-      description: "Single Tableau workbook with two linked, navigable dashboards. Sales: KPI overview vs. prior year, monthly trends with high/low markers, subcategory sales-vs-profit, weekly trends with reference-line highlighting. Customer: KPI overview, order-count distribution, top 10 customers by profit. Filters for category, region, and year.",
+      description: "Two linked Tableau dashboards built for sales managers and marketing teams to track 2023 performance and customer behavior. Sales grew to $733K, up 20.4% YoY, but Tables is the only subcategory losing money, and most customers never place a second order, a retention gap the topline growth is masking.",
       tags: ["Tableau", "Data Viz"],
       image: "images/sales-customer-dashboard.svg",
       links: [
@@ -71,7 +71,7 @@
       id: "tableau-hr-dashboard",
       title: "HR Dashboard",
       category: "dataviz",
-      description: "HR analytics dashboard covering hiring/termination trends, department and HQ-vs-branch breakdowns, a location map, demographic analysis (gender, age, education), and salary analysis by education/gender/department. Built on a synthetic dataset of ~8,950 HR records generated via a documented Python/ChatGPT pipeline.",
+      description: "HR analytics dashboard built for HR managers to track headcount, demographics, and pay equity across 8,950 employee records. The workforce is 89% still active, but the pay gap between genders doesn't close with education, it widens: $8K among Bachelor's-level staff, $13K among PhD holders.",
       tags: ["Tableau", "Data Viz"],
       image: "images/hr-dashboard-summary.svg",
       links: [
@@ -80,9 +80,9 @@
     },
     {
       id: "excel-sales-dashboard",
-      title: "Interactive Sales Dashboard — Excel",
+      title: "Interactive Sales Dashboard - Excel",
       category: "dataviz",
-      description: "Fully interactive Excel dashboard for an outdoor/camping gear retailer's 2026 sales, built with PivotTables and native charting only — no Power BI or Tableau involved. Slicers for order date, customer type, region, and sales channel drive KPI cards, a revenue-vs-gross-profit trend, category and bestseller breakdowns, and a European revenue map; $645,223 in revenue across 6,698 units, led by Camping ($198,505) and Trail Boots (449 units sold).",
+      description: "Fully interactive Excel dashboard for an outdoor/camping gear retailer's 2026 sales, built with PivotTables and native charting only - no Power BI or Tableau involved. Slicers for order date, customer type, region, and sales channel drive KPI cards, a revenue-vs-gross-profit trend, category and bestseller breakdowns, and a European revenue map; $645,223 in revenue across 6,698 units, led by Camping ($198,505) and Trail Boots (449 units sold).",
       tags: ["Excel", "Data Viz"],
       image: "images/sales-excel-dashboard.png",
       links: [
@@ -91,9 +91,9 @@
     },
     {
       id: "excel-water-sports-rentals",
-      title: "Water Sports Rentals Sales Dashboard — Excel",
+      title: "Water Sports Rentals Sales Dashboard - Excel",
       category: "dataviz",
-      description: "Excel dashboard for a seasonal water-sports rental business — a 2026 annual report tracking $150,925 in revenue across exactly 3,000 rentals ($50.31 average) with a sharp July peak and steep spring/fall drop-off. Breaks performance down by booking channel (online bookings lead, ahead of walk-ins and resort guests), by team member (Ava Martinez tops the leaderboard), and by equipment (stand-up paddleboards and kayaks are the most-rented items).",
+      description: "Excel dashboard for a seasonal water-sports rental business - a 2026 annual report tracking $150,925 in revenue across exactly 3,000 rentals ($50.31 average) with a sharp July peak and steep spring/fall drop-off. Breaks performance down by booking channel (online bookings lead, ahead of walk-ins and resort guests), by team member (Ava Martinez tops the leaderboard), and by equipment (stand-up paddleboards and kayaks are the most-rented items).",
       tags: ["Excel", "Data Viz"],
       image: "images/water-sports-rentals-excel.png",
       links: [
@@ -104,12 +104,35 @@
       id: "powerbi-nightmare-star-schema",
       title: "Nightmare to Star Schema: Power BI Data Model",
       category: "datamodel",
-      description: "Refactored a messy, real-world 23-table enterprise dataset (sales, inventory, shipments, marketing) into a clean Power BI star/galaxy schema. Built header-detail, factless-fact, accumulating-snapshot, and role-playing-dimension patterns, a central DAX measures table, and dynamic row-level security by region — while protecting total sales figures from merge-driven row fan-out.",
+      description: "Refactored a messy, real-world 23-table enterprise dataset (sales, inventory, shipments, marketing) into a clean Power BI star/galaxy schema. Built header-detail, factless-fact, accumulating-snapshot, and role-playing-dimension patterns, a central DAX measures table, and dynamic row-level security by region - while protecting total sales figures from merge-driven row fan-out.",
       tags: ["Power BI", "DAX", "Star Schema"],
       image: "images/powerbi-nightmare-star.png",
       links: [
         { label: "View Report", url: "#", primary: true },
         { label: "Source Code", url: "https://github.com/SHAH-MEER/Power-bi-nightmare-star" }
+      ]
+    },
+    {
+      id: "sql-data-warehouse",
+      title: "SQL Data Warehouse Project",
+      category: "sql",
+      description: "End-to-end SQL Server data warehouse built entirely in T-SQL, following the Medallion Architecture. Bronze layer bulk-loads raw CRM and ERP CSV extracts as-is; Silver layer deduplicates, trims, and standardizes codes (gender, marital status) and dates via stored procedures; Gold layer exposes a star schema of business-ready views - dim_customers (CRM/ERP gender resolution), dim_products (active products with category), and fact_sales. SQL-based data quality tests validate PK uniqueness, whitespace, standardization, and fact-to-dimension referential integrity.",
+      tags: ["SQL", "T-SQL", "SQL Server", "Data Warehouse", "ETL"],
+      image: "images/data_architecture.png",
+      links: [
+        { label: "Source Code", url: "https://github.com/SHAH-MEER/sql-data-warehouse-project", primary: true }
+      ]
+    },
+    {
+      id: "olist-retention-analysis",
+      title: "Why Don't Customers Come Back? - Olist Retention Analysis",
+      category: "sql",
+      description: "SQL and Python retention analysis of the Olist Brazilian e-commerce marketplace, where only 3.12% of customers ever place a second order. Two purpose-built Postgres views (fact_orders, customer_retention_summary) on top of the normalized schema back a breakdown of repeat-purchase behavior by delivery speed, review score, payment method, category, spend, geography, and cohort. Late first deliveries roughly halve the repeat rate (2.56% vs. 3.13%), but even a perfect first order only returns 3% of the time - the one segment with a real gap is customers who paid by voucher, who return at 4.52%. Rendered as a self-contained Quarto report with interactive Plotly charts.",
+      tags: ["SQL", "PostgreSQL", "Python", "Quarto", "Cohort Analysis"],
+      image: "images/project-flow.jpg",
+      links: [
+        { label: "Read Report", url: "reports/retention_story.html", primary: true },
+        { label: "Source Code", url: "https://github.com/SHAH-MEER/olist-retention-analysis" }
       ]
     },
     {
@@ -189,7 +212,7 @@
       id: "gnn-fraud-detection",
       title: "GNN Fraud Detection",
       category: "dl",
-      description: "Fraud detection comparison on the Elliptic Bitcoin transaction dataset — XGBoost vs. GraphSAGE (GNN) with a temporal train/test split. XGBoost won on every metric (PR-AUC 0.80 vs. 0.50); diagnosed post-timestep-43 concept drift as a likely driver of the GNN's weaker performance, then tested a recency-weighting mitigation strategy.",
+      description: "Fraud detection comparison on the Elliptic Bitcoin transaction dataset - XGBoost vs. GraphSAGE (GNN) with a temporal train/test split. XGBoost won on every metric (PR-AUC 0.80 vs. 0.50); diagnosed post-timestep-43 concept drift as a likely driver of the GNN's weaker performance, then tested a recency-weighting mitigation strategy.",
       tags: ["PyTorch", "GraphSAGE", "XGBoost", "Graph Neural Networks", "Concept Drift"],
       image: "images/gnn-fraud-detection.png",
       links: [
@@ -316,7 +339,7 @@
 
     grid.innerHTML = list.length
       ? list.map(cardHTML).join("")
-      : '<p class="empty-state">No projects here yet — check back soon.</p>';
+      : '<p class="empty-state">No projects here yet - check back soon.</p>';
   }
 
   function renderTabs() {
